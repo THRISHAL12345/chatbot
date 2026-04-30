@@ -4,7 +4,7 @@ import Message from './Message';
 import SuggestionChips from './SuggestionChips';
 import TypingIndicator from './TypingIndicator';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
 
 function Chat({ persona, personaData, messages, setMessages }) {
   const [inputValue, setInputValue] = useState('');
