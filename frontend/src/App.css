@@ -1,0 +1,52 @@
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 10px 0;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.app-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.app-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 20px 16px;
+  }
+  
+  .app-header {
+    margin-bottom: 24px;
+  }
+
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,68 @@
+.persona-switcher {
+  display: flex;
+  background: var(--bg-hover);
+  padding: 6px;
+  border-radius: var(--radius-full);
+  margin-bottom: 32px;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.persona-button {
+  padding: 10px 24px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: inherit;
+}
+
+.persona-button:hover {
+  color: var(--text-primary);
+}
+
+.persona-button.active {
+  background: var(--bg-white);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+/* Use the persona color just for the active dot/accent if wanted, 
+   but for clean minimal we keep it subtle. */
+.persona-button.active .persona-button-name {
+  color: var(--button-color, var(--text-primary));
+}
+
+.persona-button-avatar {
+  font-size: 1.2rem;
+}
+
+.persona-button-name {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .persona-switcher {
+    padding: 4px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: none;
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .persona-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+}
