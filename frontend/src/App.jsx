@@ -44,22 +44,6 @@ const personas = {
 
 function App() {
   const [selectedPersona, setSelectedPersona] = useState('anshuman');
-  const [chatHistories, setChatHistories] = useState({
-    anshuman: [],
-    abhimanyu: [],
-    kshitij: []
-  });
-
-  const handleSetMessages = (updater) => {
-    setChatHistories((prev) => {
-      const currentMessages = prev[selectedPersona] || [];
-      const newMessages = typeof updater === 'function' ? updater(currentMessages) : updater;
-      return {
-        ...prev,
-        [selectedPersona]: newMessages
-      };
-    });
-  };
 
   return (
     <div className="app">
@@ -77,8 +61,6 @@ function App() {
       <Chat
         persona={selectedPersona}
         personaData={personas[selectedPersona]}
-        messages={chatHistories[selectedPersona]}
-        setMessages={handleSetMessages}
       />
     </div>
   );

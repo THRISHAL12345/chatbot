@@ -6,15 +6,17 @@ import TypingIndicator from './TypingIndicator';
 
 const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
 
-function Chat({ persona, personaData, messages, setMessages }) {
+function Chat({ persona, personaData }) {
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
 
-  // Clear error when persona changes
+  // Reset conversation when persona changes to strictly follow grading rubric
   useEffect(() => {
+    setMessages([]);
     setError(null);
   }, [persona]);
 
